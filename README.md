@@ -1,15 +1,17 @@
-# GEFormerDTA
-About the dataset for the paper 'GEFormerDTA: drug target affinity prediction based on Transformer graph for early fusion'
+==========================================================<br>
+**GEFormerDTA**: drug target affinity prediction based on Transformer graph for early fusion<br>
+==========================================================<br>
 
-=========
-Dataset:
-=========
-1. if data/ not exist, create it by 
 
+<text>========<br>
+Database:<br>
+========</text>
+
+1.if data/ not exist, create it by 
 mkdir -p data/
 
-2.download the Davis database from the following link:
-
+2.download the Davis abd KIBA database from the following link:
 
 
 3.
+
