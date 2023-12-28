@@ -2,8 +2,6 @@
 
 Detailed introduction to the paper "GEFormerDTA: drug target affinity prediction based on Transformer graph for early fusion"
 
-<br><br>
-
 =========
 
 Datasets:
@@ -39,9 +37,9 @@ e.g., AAK1.all. This file contains all the detail prediction results for Seconda
 
 (2)&emsp;detailed informations in separate files:
 
-​	SeqID.ss3
-​	SeqID.ss8
-​	SeqID.acc
+​	SeqID.ss3<br>
+​	SeqID.ss8<br>
+​	SeqID.acc<br>
 ​	SeqID.diso
 
 These files contain more detail proteins structure informations in the form of probability. We only use two of these files information, SeqID.ss8 and SeqID.acc.
@@ -50,9 +48,9 @@ These files contain more detail proteins structure informations in the form of p
 
 (3)&emsp;simple informations in separate files:
 
-​	SeqID.ss3_simp
-​	SeqID.ss8_simp
-​	SeqID.acc_simp
+​	SeqID.ss3_simp<br>
+​	SeqID.ss8_simp<br>
+​	SeqID.acc_simp<br>
 ​	SeqID.diso_simp
 
 The information contained in these files is not currently used by us.
