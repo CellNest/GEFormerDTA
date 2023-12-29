@@ -3,6 +3,7 @@
 Detailed introduction to the paper "GEFormerDTA: drug target affinity prediction based on Transformer graph for early fusion"
 
 
+
 =========
 
 Datasets:
@@ -22,9 +23,7 @@ These files were used to re-produce the results of two other methods [(Pahikkala
 
 ```mkdir -p data/```
 
-2.&emsp;download the `Davis` and `KIBA` dataset from the following link:
-
-[https://github.com/CellNest/GEFormerDTA/tree/main/data](https://github.com/CellNest/GEFormerDTA/tree/main/data)
+2.&emsp;download the `Davis` and `KIBA` dataset from the following [here](https://github.com/CellNest/GEFormerDTA/tree/main/data).
 
 **Description**
 
