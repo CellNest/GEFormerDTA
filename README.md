@@ -12,10 +12,14 @@ Datasets:
 
 **Introduction**
 
-These files were used to re-produce the results of two other methods [(Pahikkala et al., 2017)](https://academic.oup.com/bib/article/16/2/325/246479) and [(He et al., 2017)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0209-z).
+These files were used to re-produce the results of two other methods [(Pahikkala et al., 2017)](https://academic.oup.com/bib/article/16/2/325/246479) and [(He et al., 2017)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0209-z
+        
+        ).
 
 - The original Davis data and more explanation can be found [here](http://staff.cs.utu.fi/~aatapa/data/DrugTarget/).
-- The original KIBA data and more explanation can be found [here](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0209-z).
+- The original KIBA data and more explanation can be found [here](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0209-z
+        
+        ).
 
 **Usage**
 
@@ -66,7 +70,7 @@ SDF (Structure Data File) is a common chemical file format used to store structu
 
 **`3. map folders`**
 
-These profile files can be generated using the [TAPE](https://github.com/songlab-cal/tape) tool. It typically contain distance information between residues within a protein structure. They provide spatial location details between residues, describing the distances among them within the protein structure, which is crucial for analyzing the structure and properties of proteins. These files can be used for simulating, analyzing structural dynamics of proteins, as well as studying protein folding and functionality.
+These map files can be generated using the [TAPE](https://github.com/songlab-cal/tape) tool. It typically contain distance information between residues within a protein structure. They provide spatial location details between residues, describing the distances among them within the protein structure, which is crucial for analyzing the structure and properties of proteins. These files can be used for simulating, analyzing structural dynamics of proteins, as well as studying protein folding and functionality.
 
 ex: smileSeq.sdf
 
