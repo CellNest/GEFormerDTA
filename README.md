@@ -2,11 +2,21 @@
 
 Detailed introduction to the paper "GEFormerDTA: drug target affinity prediction based on Transformer graph for early fusion"
 
+
 =========
 
 Datasets:
 
 =========
+
+**Introduction**
+
+These files were used to re-produce the results of two other methods [(Pahikkala et al., 2017)](https://academic.oup.com/bib/article/16/2/325/246479) and [(He et al., 2017)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0209-z).
+
+- The original Davis data and more explanation can be found [here](http://staff.cs.utu.fi/~aatapa/data/DrugTarget/).
+- The original KIBA data and more explanation can be found [here](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0209-z).
+
+**Usage**
 
 1.&emsp;if `data/` not exist, create it by
 
@@ -16,22 +26,18 @@ Datasets:
 
 [https://github.com/CellNest/GEFormerDTA/tree/main/data](https://github.com/CellNest/GEFormerDTA/tree/main/data)
 
-<br><br>
+**Description**
 
-==================================================
+**`1. profile folders`**
 
-Description of `profile/` , `sdf`/, `split`/, `map/` and `emb`/ folders:
-
-==================================================
-
-**`1. profile/`**
+These profile files can be generated using [it](https://github.com/realbigws/RaptorX_Property_Fast).
 
 (1)&emsp;overall detailed results:
 		
 
 ​	SeqID.all
 
-e.g., AAK1.all. This file contains all the detail prediction results for Secondary Structure Element (SS3 and SS8), Solvent Accessibility Surface (SAS), and Order/Disorder prediction (DISO).
+e.g., AAK1.all. This file contains all the detail prediction results for Secondary Structure Element (SS3 and SS8), Solvent Accessibility Surface (SAS), and Order/Disorder prediction (DISO) of AAK1.
 
 --------------------
 
@@ -55,21 +61,21 @@ These files contain more detail proteins structure informations in the form of p
 
 The information contained in these files is not currently used by us.
 
-**`2. sdf/`**
+**`2. SDF folders`**
 
-SDF (Structure Data File) is a common chemical file format used to store structural information of molecules, typically encompassing chemical structures, atomic arrangements, bond details, and more. This file format is commonly utilized for storing compound information in chemical databases. SDF files can contain various types of information, primarily including **molecular structural details**, **physical and chemical properties**, **biological activity and pharmaceutical information**, as well as **identifiers and attributes**.
+SDF (Structure Data File) is a common chemical file format used to store structural information of molecules, typically encompassing chemical structures, atomic arrangements, bond details, and more. This file format is commonly utilized for storing compound information in chemical databases. SDF files can contain various types of information, primarily including **molecular structural details**, **physical and chemical properties**, **biological activity and pharmaceutical information**, as well as **identifiers and attributes**. These SDF files can be generated using [it](https://github.com/kaiwang0112006/smilesTosdf).
 
-**`3. map/`**
+**`3. map folders`**
 
-Map files typically contain distance information between residues within a protein structure. They provide spatial location details between residues, describing the distances among them within the protein structure, which is crucial for analyzing the structure and properties of proteins. These files can be used for simulating, analyzing structural dynamics of proteins, as well as studying protein folding and functionality.
+These profile files can be generated using the [TAPE](https://github.com/songlab-cal/tape) tool. It typically contain distance information between residues within a protein structure. They provide spatial location details between residues, describing the distances among them within the protein structure, which is crucial for analyzing the structure and properties of proteins. These files can be used for simulating, analyzing structural dynamics of proteins, as well as studying protein folding and functionality.
 
 ex: smileSeq.sdf
 
-**`4. emb/`**
+**`4. emb folders`**
 
 The protein sequence matrix is mainly generated based on the one-dimensional protein sequence information in a certain encoding (for example, one-hot encoding, BPE encoding, etc.).
 
-**`5. split/`**
+**`5. split folders`**
 
 The `split/` folder mainly contains three subsets of the data set, namely the training set, verification set and test set. The format of the data set is shown in Table 1 below.
 
