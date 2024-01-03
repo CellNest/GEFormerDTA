@@ -64,13 +64,13 @@ The information contained in these files is not currently used by us.
 
 SDF (Structure Data File) is a common chemical file format used to store structural information of molecules, typically encompassing chemical structures, atomic arrangements, bond details, and more. This file format is commonly utilized for storing compound information in chemical databases. SDF files can contain various types of information, primarily including **molecular structural details**, **physical and chemical properties**, **biological activity and pharmaceutical information**, as well as **identifiers and attributes**. These SDF files can be generated using [it](https://github.com/kaiwang0112006/smilesTosdf).
 
-**`3. map folders`**
+**`3. emb folders`**
 
 These map files can be generated using the [TAPE](https://github.com/songlab-cal/tape) tool. It typically contain distance information between residues within a protein structure. They provide spatial location details between residues, describing the distances among them within the protein structure, which is crucial for analyzing the structure and properties of proteins. These files can be used for simulating, analyzing structural dynamics of proteins, as well as studying protein folding and functionality.
 
 ex: smileSeq.sdf
 
-**`4. emb folders`**
+**`4. map folders`**
 
 The protein sequence matrix is mainly generated based on the one-dimensional protein sequence information in a certain encoding (for example, one-hot encoding, BPE encoding, etc.).
 
