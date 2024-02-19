@@ -93,6 +93,7 @@ def train(model, device, train_loader, optimizer, epoch):
         # print(output)
         affinity = drug.y.view(-1, 1).float()
         # print(output.shape, affinity.shape)
+        affinity = affinity if affinity.shape[0] == output.shape[1] else pad_2d_unsqueeze(affinity, output.shape[1]).squeeze(0)
         loss = loss_fn(output, affinity.to(device))
         total_train_loss += loss.item()
         # loss.backward()
@@ -144,7 +145,6 @@ def predicting(model, device, loader):
         total_preds = torch.cat((total_preds_f[:, 0, :], total_preds_s[0, :, :]), 0)
         # print(total_labels.shape, total_preds.shape)
         total_preds = total_preds[:total_labels.shape[0], :]
-        total_preds = torch.tensor([[x + random.uniform(-1., 1.)] for x in total_labels], dtype=torch.float32)
     return total_labels.numpy().flatten(), total_preds.numpy().flatten()
 
 
@@ -323,6 +323,11 @@ for epoch in range(start_epoch, config.NUM_EPOCHS):
     train_loss = train(model, device, train_loader, optimizer, epoch + 1)
     G, P = predicting(model, device, valid_loader)
     ret = [rmse(G, P), mse(G, P), pearson(G, P), spearman(G, P), ci(G, P), r2_score(G, P)]
+    # save the best model based on rmse on validation data
+    # for g, p in zip(G, P):
+    #     df = df.append({'真实值': g, '预测值': p}, ignore_index=True)
+    # df.to_excel('tools/DAV/df.xls', index=False)
+    # print('数据已保存到 df.xls 文件中...')
     if set_num == 0:
         if lr_adjust_patience > 40:
             LR = adjust_learning_rate(optimizer, LR, 0.8)
@@ -332,6 +337,10 @@ for epoch in range(start_epoch, config.NUM_EPOCHS):
         best_mse = ret[1]
         best_ci = ret[-2]
         G_t, P_t = predicting(model, device, test_loader)
+        # for g, p in zip(G_t, P_t):
+        #     df = df.append({'真实值': g, '预测值': p}, ignore_index=True)
+        # df.to_excel('tools/DAV/df.xls', index=False)
+        # print('数据已保存到 df.xls 文件中...')
         ret_test = [rmse(G_t, P_t), mse(G_t, P_t), pearson(G_t, P_t), spearman(G_t, P_t), ci(G_t, P_t), r2_score(G_t, P_t)]
         # writer.add_scalar('RMSE/test', ret[1], epoch)
         with open(result_file_name, 'w') as f:
@@ -362,5 +371,9 @@ for epoch in range(start_epoch, config.NUM_EPOCHS):
 model.load_state_dict(torch.load(model_file_name)['state_dict'], strict=False)
 G, P = predicting(model, device, test_loader)
 ret = [rmse(G, P), mse(G, P), pearson(G, P), spearman(G, P), ci(G, P), r2_score(G, P)]
+# for g, p in zip(G, P):
+#     df = df.append({'真实值': g, '预测值': p}, ignore_index=True)
+# df.to_excel('tools/DAV/df.xls', index=False)
+# print('数据已保存到 df.xls 文件中...')
 with open(result_file_name, 'w') as f:
     f.write(','.join(map(str, ret)))
